@@ -13,4 +13,7 @@ Completed features:
 Upcoming Features:
 - Events
 - Season Change
+- New NPCs
+- Inventory system
+- More lore
 - Cosmic Horror

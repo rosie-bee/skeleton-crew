@@ -2010,7 +2010,7 @@ def nightActionMenu():
  print("~~~~~~~~")
  print("Travel -----")
  print("1. Local Museum - 60 min.")
- print("2. Fishing Pier - 60 min. [Not Implemented]")
+ print("2. Fishing Pier - 60 min.")
  print("3. Park - 60 min. [Not Implemented]")
  print("4. Boathouse - 60 min. [Not Implemented]")
  print("Actions -----")

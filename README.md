@@ -11,11 +11,12 @@ Completed features:
 - Inividualized NPCs & Stats
 - Scrimmage Mechanics
 - Inspect Command
+- Museum Location
+- Pier Location
 
 Upcoming Features:
 - Events
-- Season Change
+- Full Season Change
 - New NPCs
-- Inventory system
 - More lore
 - Cosmic Horror

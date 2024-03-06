@@ -3,6 +3,12 @@ from colorama import init, Fore, Back, Style
 
 init(convert=True)
 import random
+global compStarter
+compStarter = 2500
+global compIncrement
+compIncrement = 600
+global winCounter
+winCounter=0
 global robinQuestComplete
 robinQuestComplete=0
 global robinQuestEnable
@@ -427,7 +433,7 @@ def actionOne():
   teamAddEndurance = 10
   teamAddPower = 4
   teamAddMorale = -5
-  teamAddFatigue = 8
+  teamAddFatigue = 16
   updateSam()
   updateOllie()
   updateNoel()
@@ -452,7 +458,7 @@ def actionTwo():
   teamAddEndurance = 4
   teamAddPower = 10
   teamAddMorale = -5
-  teamAddFatigue = 13
+  teamAddFatigue = 26
   updateSam()
   updateOllie()
   updateNoel()
@@ -484,7 +490,7 @@ def actionThree():
   teamAddTechnique = 9
   teamAddRhythm = 6
   teamAddMorale = 2*tempMentalModifier
-  teamAddFatigue = 7
+  teamAddFatigue = 14
   teamAddTerror=0+nightTerror
   updateSam()
   updateOllie()
@@ -517,7 +523,7 @@ def actionFour():
   teamAddTechnique = 6
   teamAddRhythm = 9
   teamAddMorale = 2*tempMentalModifier
-  teamAddFatigue = 10
+  teamAddFatigue = 20
   teamAddTerror=0+nightTerror
 
   updateSam()
@@ -544,7 +550,7 @@ def actionFive():
   teamAddEndurance = 0
   teamAddPower = 12
   teamAddMorale = 4
-  teamAddFatigue = 15
+  teamAddFatigue = 30
 
   updateSam()
   updateOllie()
@@ -573,7 +579,7 @@ def actionSix():
   teamAddTechnique = 0
   teamAddRhythm = -2
   teamAddMorale = 0
-  teamAddFatigue = 7
+  teamAddFatigue = 14
   teamAddTerror = 3*(nightTerror*2)
 
   updateSam()
@@ -602,7 +608,7 @@ def actionSeven():
   teamAddTechnique = 16
   teamAddRhythm = 0
   teamAddMorale = 4
-  teamAddFatigue = -4
+  teamAddFatigue = -8
   teamAddTerror = 0
 
   updateSam()
@@ -631,7 +637,7 @@ def actionEight():
   teamAddTechnique = 0
   teamAddRhythm = 0
   teamAddMorale = 25
-  teamAddFatigue = -8
+  teamAddFatigue = -16
   teamAddTerror = -5
 
   updateSam()
@@ -660,7 +666,7 @@ def actionNine():
   teamAddTechnique = 0
   teamAddRhythm = 0
   teamAddMorale = 7
-  teamAddFatigue = -18
+  teamAddFatigue = -36
   teamAddTerror = 2
 
   updateSam()
@@ -686,6 +692,7 @@ def actionInspect():
   print("8. Santana")
   inspectTarget=input()
   inspectCharacter(inspectTarget)
+  input()
   print("")
 
 def inspectCharacter(inspectTarget):
@@ -1311,7 +1318,7 @@ def eventTrigger(eventNumber):
   teamAddMorale-=15
   teamAddTerror+=25
  if eventNumber==31:
-  print("It smell like rotting fish.")
+  print("It smells like rotting fish.")
   teamAddEndurance-=5
  if eventNumber==32:
   print("A small sparrow falls out of the sky, into the boat.")
@@ -2334,7 +2341,9 @@ def raceDay():
  boatScore()
  print(boatRating)
  global compCounter
- CompetitorScore = 1200 + (600*compCounter)
+ global compStarter
+ global compIncrement
+ CompetitorScore = compStarter + (compIncrement*compCounter)
  if boatRating > CompetitorScore:
   global winCounter
   winCounter=winCounter+1
@@ -2975,7 +2984,7 @@ def actionTwoN():
     print("<You don't have any fish.  I can't give you anything.>")
    if fishInPossession > 0:
     fishInPossession=fishInPossession-1
-    print("<In exchange for that fish, how about I teach you somet things?>")
+    print("<In exchange for that fish, how about I teach you some things?>")
     print("<Foster whispers a few incantations over the fish, as he extracts the heart from the body.>")
     teamAddTerror=teamAddTerror+30
     skillRoulette=random.randint(1,4)
@@ -3078,6 +3087,7 @@ def actionOneN():
    print("'Most recently, I came across an interesting collection of arrowheads!'")
    print("'I really enjoy how light it is out lately - when it gets dark it's a lot less fun.'")
    print("'Overall, I've been having a great time lately!  Thank you for asking!'")
+   input()
  if actionInput=="2":
   opheliaLove=opheliaLove+20
   print("'You'd really like to see the exhibits?'")
@@ -3187,6 +3197,7 @@ def actionOneN():
    print("'The easiest to find would be arrowheads and sea glass - both very common on the beaches and in the woods.'")
    print("'Other more valuable artifacts happen to wash up now and again - and still more are entirely unaccounted for.'")
    print("'If you find anything interesting, please bring it to me!")
+  input() 
  if actionInput == "4":
   print("'You really want to learn more about me...?'")
   opheliaAuthority=opheliaAuthority+15
@@ -3230,7 +3241,7 @@ def actionOneN():
    print("'When I'm not in the library, I'm here tidying the exhibits.  The work never ends!'")
    print("'On the rare moment's I'm not busy, I'm usually out in the park!'")
    print("'I like watching the ravens!  They're so pretty...'")
-   print("'Ophelia is beaming.'")
+   print("Ophelia is beaming.")
    input()
   if opheliaInput == "4":
    print("'If I weren't here in Watson's Harbor...?'")
@@ -3268,7 +3279,7 @@ def actionOneN():
     global teamAddTerror
     teamAddMorale=teamAddMorale+15
     teamAddTerror=teamAddTerror-15
-    print("She eventually releases her grasp, and the two of you laught together for a moment.")
+    print("She eventually releases her grasp, and the two of you laugh together for a moment.")
    else:
     print("She blushes more, and turns away from you.")
     print("After a while of stammering excuses and denials, she reaches out a hand.")
@@ -3578,7 +3589,7 @@ def actionThreeN():
    input()
   if parkInput== "3":
    print("You pull a cigarette from your pocket and light it.")
-   print("You take a drag..  The pilot light shines through the dark.")
+   print("You take a drag.  The pilot light shines through the dark.")
    teamAddTerror-=15
    input()
  if actionInput == "4":
@@ -3592,19 +3603,20 @@ def actionThreeN():
   forestInput=input()
   if forestInput == "1":
    searchResult=random.randint(1,10)
+   print(searchResult)
    if searchResult==1:
     if artifactInPossession == 1:
      print("You have a feeling carrying an artifact is bad luck.")
      print("You should take it to Ophelia.")
-   if artifactInPossession == 0:
-    if foundFeather == 1:
-     print("You find nothing of note.")
-    if foundFeather == 0:
-     print("You find a pure white feather, far too large for any bird.")
-     print("It looks almost ethereal.")
-     print("Perhaps Ophelia would want to take a look at it.")
-     featherArtifact = 1
-     artifactInPossession =1
+    if artifactInPossession == 0:
+     if foundFeather == 1:
+      print("You find nothing of note.")
+     if foundFeather == 0:
+      print("You find a pure white feather, far too large for any bird.")
+      print("It looks almost ethereal.")
+      print("Perhaps Ophelia would want to take a look at it.")
+      featherArtifact = 1
+      artifactInPossession =1
    if searchResult >1:
     print("You find nothing of note.  You feel like something is watching you.")  
    input()

@@ -3,6 +3,8 @@ from colorama import init, Fore, Back, Style
 
 init(convert=True)
 import random
+global opheliaEvent
+opheliaEvent=0
 global compStarter
 compStarter = 2500
 global compIncrement
@@ -62,7 +64,7 @@ global angelDeny
 global santanaDeny
 santanaDeny = 0
 global progressMod
-progressMod = 1
+progressMod = 0.5
 global day
 day = 0
 global week
@@ -2761,6 +2763,7 @@ def winterVisions():
 
 
 def fishermenDialogue():
+ global fishermenRep
  print("~~~~~~~~~")
  print("The fishermen are gathered in a large group.")
  print("Some smoke cigarettes as they wait around for the next boat to come in.")
@@ -3134,7 +3137,7 @@ def actionOneN():
    opheliaLove=opheliaLove-20
    opheliaAuthority=opheliaAuthority+20
    print("'Oh -'")
-   print("'She turns away from you, in an effort to hide her hurt.'")
+   print("She turns away from you, in an effort to hide her hurt.")
  if actionInput == "3":
   print("'You'd like to learn about local history?'")
   print("Ophelia is beaming.")
@@ -3287,10 +3290,11 @@ def actionOneN():
     teamAddMorale=teamAddMorale+10
     teamAddTerror=teamAddTerror-10
    input()
+ global opheliaEvent
  if actionInput == "5":
   if opheliaLove == 0:
-   print("'I really would rather not.")
-
+   print("'I really would rather not.'")
+ 
   if opheliaLove > 0:
    opheliaEvent = 1
    if opheliaLove > 100:
@@ -3494,7 +3498,7 @@ def actionOneN():
       print("Like I said, it's nothing.")
       print("Let's talk about something else.")
       input()
-  if artifactInput==3:
+  if artifactInput=="3":
    print("Ophelia looks at you, eyes boring into your soul.")
    print("'That one's personal.'")
    input()
@@ -3560,6 +3564,7 @@ def actionThreeN():
   if parkItems >3:
    print("You find nothing of note.")
  if actionInput =="2":
+  global teamAddMorale
   print("You take a relaxed walk around the park.")
   print("It's misty out, but the lamps cut through it well enough.")
   print("You feel better.")
@@ -3603,7 +3608,6 @@ def actionThreeN():
   forestInput=input()
   if forestInput == "1":
    searchResult=random.randint(1,10)
-   print(searchResult)
    if searchResult==1:
     if artifactInPossession == 1:
      print("You have a feeling carrying an artifact is bad luck.")

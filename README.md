@@ -6,7 +6,7 @@ Incredibly rough and WIP, all I'm aiming for is a functional product.
 
 You'll need Python 3.10 and the Colorama library in order to run this game.
 DOWNLOAD PYTHON ONLY FROM THE OFFICIAL SITE TO GET THE PIP LIBRARY
-To install Colorama, open python and type "pip install colorama" into the terminal.
+To install Colorama, open the command terminal and type "pip install colorama" into the terminal.
 
 Check the new-release-beta folder to get the most up-to-date version of the game!
 
@@ -20,6 +20,8 @@ Completed features:
 - Pier Location
 - Artifacts
 - Rituals
+- More locations 
+- Saves !
 
 Upcoming Features:
 - More Events

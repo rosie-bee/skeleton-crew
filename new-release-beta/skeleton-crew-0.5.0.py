@@ -2,6 +2,10 @@
 from colorama import init, Fore, Back, Style
 init(convert=True)
 import random
+import os
+abspath = os.path.abspath(__file__)
+dname = os.path.dirname(abspath)
+os.chdir(dname)
 global mansionDiscovered
 mansionDiscovered = 0
 global opheliaEvent
